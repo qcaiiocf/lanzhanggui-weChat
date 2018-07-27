@@ -1,0 +1,59 @@
+<!-- 待机图 -->
+<view wx:if='{{show}}' bind:tap='goHome' class='time' >
+  <image src='{{imgIP}}/images/ad.jpg' style='width:100%;height:100vh'></image>
+  <view  class='timeText' >0{{time}}</view>
+</view>
+
+<!-- 蒙版和广告图 -->
+<view wx:if='{{showAd}}' class='adImg'>
+  <image src='http://192.168.101.47:3000/images/2.jpg' bindtap='clearAd'></image>
+</view>
+<view class='adBox' wx:if='{{showAd}}' bindtap='clearAd'></view>
+<view></view>
+
+<!-- banner -->
+<view>
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}" style='height:400rpx' interval="3000" duration='1000'>
+    <block wx:for="{{bannerArr}}" wx:key='{{index}}'>
+      <swiper-item bind:tap='toAd' data-src='{{item}}'>
+        <image src="{{imgIP+item}}" style='width:100%;height:100%'/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- 信息轮播 -->
+<view class='infoBox'>
+  <image src="../../images/home/notice.png" style="width: 26rpx; height: 22rpx;margin-right:10rpx"/>
+ <swiper  autoplay="true"  vertical="true" duration='1000'  interval="3000" style='flex:1;height:40rpx'>
+    <block wx:for="{{infoArr}}" wx:key='{{index}}' >
+      <swiper-item bind:tap='toInfoContent' data-item='{{item}}' >
+        <view>{{item.title}}</view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view style='padding:0 10rpx' bindtap='toInfo'>更多信息></view>
+</view>
+
+<!-- 菜单栏 -->
+<view class='menu'>
+    <view>
+      <image src='../../images/home/all.png'></image>
+      <view>全部商品</view>
+    </view>
+    <view>
+      <image src='../../images/home/my.png'></image>
+      <view>我的常购</view>
+    </view>   
+     <view>
+      <image src='../../images/home/order.png'></image>
+      <view>我的订单</view>
+    </view>
+</view>
+
+<image src='{{imgIP}}/images/sales01.jpg' style='width:100%;height:300rpx'></image>
+
+<!-- 猜你喜欢 -->
+<view class='like'>
+ 猜你喜欢
+</view>

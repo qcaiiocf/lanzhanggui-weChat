@@ -1,0 +1,10 @@
+/* pages/infoContent/infoContent.wxss */
+/* pages/info/info.wxss */
+.textBox{
+  padding:20rpx;
+  margin:20rpx;
+  border-radius:10rpx;
+  background: #ffffff;
+color: #a2a2a2
+
+}

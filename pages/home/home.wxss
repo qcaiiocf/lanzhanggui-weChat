@@ -1,0 +1,64 @@
+/* pages/home/home.wxss */
+/* 页面倒计时 */
+.time{
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+.timeText {
+  position: fixed;
+  bottom: 100rpx;
+  right: 50rpx;
+  padding: 0rpx 40rpx;
+  background: #c4c4c4;
+  border-radius: 20rpx;
+  color: white;
+}
+
+/* 蒙版盒子 */
+.adBox {
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+.adImg {
+  position: fixed;
+  z-index: 900;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 信息轮播盒子 */
+.infoBox {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0;
+  color: #999999;
+}
+/* 菜单栏 */
+.menu{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40rpx 0;
+  text-align: center;
+  border-top: 1rpx solid #f7f7f7;
+  border-bottom: 16rpx solid #f7f7f7 ;
+}
+.menu image{
+  width: 120rpx;
+  height: 120rpx;
+}
+
+/* 猜你喜欢 */
+.like{
+ text-align:center;
+ padding:20rpx;
+ font-size:36rpx;
+ border-bottom: 1rpx solid #c4c4c4
+}

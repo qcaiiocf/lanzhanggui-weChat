@@ -1,0 +1,17 @@
+<!--pages/infoContent/infoContent.wxml-->
+
+<view style='background:#f7f7f7;padding:5rpx 0;height:100vh'>
+  <view class='textBox'>
+    <view>{{data.text}}</view>
+    <view class='flexWarp' style='justify-content:space-between;margin-top:40rpx;'>
+      <view>
+        <text>{{data.date}} </text>
+        <text>{{data.time}}</text>
+      </view>
+      <view>
+        懒掌柜
+      </view>
+    </view>
+  </view>
+
+</view>

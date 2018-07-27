@@ -1,0 +1,4 @@
+<!--pages/ad/ad.wxml-->
+<view >
+    <image src='{{src}}' style='width:100%;margin:200rpx 0;'></image>
+</view>

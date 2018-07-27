@@ -1,0 +1,14 @@
+/* pages/info/info.wxss */
+.textBox{
+  padding:20rpx;
+  margin:20rpx;
+  border-radius:10rpx;
+  background: #ffffff;
+}
+.title{
+  color:green;
+  font-size:36rpx;
+  overflow:hidden;
+  white-space:nowrap;
+  margin: 5rpx 0;
+}

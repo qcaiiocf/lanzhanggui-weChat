@@ -1,0 +1,8 @@
+<view style='background:#f7f7f7;padding:5rpx 0;height:100vh'>
+
+  <view wx:for='{{data}}' data-item='{{item}}' wx:key='{{index}}' class='textBox' bindtap='toInfoContent' >
+      <view class='title'>{{item.title}}</view>
+      <view>{{item.text}}</view>
+  </view>
+
+</view>
