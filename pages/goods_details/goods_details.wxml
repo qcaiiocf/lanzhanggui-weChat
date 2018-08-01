@@ -1,0 +1,26 @@
+<view style='padding-bottom:110rpx'>
+
+<view>
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}" style='height:620rpx'>
+    <block wx:for="{{data.imgArr}}" wx:key='{{index}}'>
+      <swiper-item class='flexWarp' style='justify-content:center;align-items:center;'>
+        <image src="{{imgIP+item}}" class="slide-image" style='width:500rpx;height:500rpx' />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 商品名 -->
+<view class='goodsName'>{{data.name}}</view>
+<!-- 简介 -->
+<view class='goodsSummary'>{{data.summary}}</view>
+<!--价格 -->
+<view class='flexWarp money'>
+  <view font-size>￥{{data.price}}元/{{data.spce}}</view>
+  <view class='flexWarp often' bindtap='pushOften'> <image src='../../images/{{isOften?"heart-on.png":"heart.png"}}' style='width:30rpx;height:30rpx;margin-right:10rpx;'></image> 加入常购</view>
+</view>
+
+<view  class='push' bindtap='pushShopCar'>
+  加入购物车
+</view>
+
+</view>

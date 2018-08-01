@@ -1,0 +1,40 @@
+/* pages/my/my.wxss */
+
+.topBox {
+  padding: 20rpx;
+  align-items: center;
+}
+
+.imgBox {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 30rpx;
+}
+
+.bottomBox {
+  width: 100%;
+  height: 100vh;
+  background: #f7f7f7;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.orderBox {
+  background: white;
+  border-radius: 10rpx;
+  padding: 10rpx;
+}
+.orderBox view{
+  font-size:22rpx
+}
+
+.orderContent {
+  justify-content: space-around;
+  margin: 40rpx 0 10rpx;
+}
+
+.orderContent>view {
+  text-align: center;
+}

@@ -1,0 +1,13 @@
+<!--templates/goods/goods.wxml-->
+<template name="goods">
+  <view class='flexWarp box' >
+    <image src='{{imgIP+src}}' style='width:200rpx;height:150rpx' data-type='details'></image>
+    <view class='flexGrow' data-type='details' >
+      <view class='goodsName' data-type='details'>{{name}}</view>
+      <view class='goodsPrice' data-type='details'>￥{{price}}元/{{spce}}</view>
+    </view>
+    <view  style='padding:50rpx 20rpx;' data-type='push'>
+      <image src='../../images/plus.png' style='width:50rpx;height:50rpx' data-type='push'></image>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,15 @@
+/* pages/classify/classify.wxss */
+@import '../../templates/goods/goods.wxss';
+
+.ipt {
+  padding: 0 30rpx 0 70rpx;
+  background: #f7f7f7;
+}
+
+.searchimg {
+  width: 26rpx;
+  height: 26rpx;
+  position: absolute;
+  top: 25rpx;
+  left: 30rpx;
+}

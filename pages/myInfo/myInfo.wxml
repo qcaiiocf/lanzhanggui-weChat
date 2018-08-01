@@ -1,0 +1,11 @@
+<view>
+  <view>
+    <view style='padding:20rpx;color:#4d4'>账号信息</view>
+    <view class='flexWarp box'>
+      <text>微信名:</text>
+      <text>{{userInfo.nickName}}</text>
+    </view>
+    <view class='flexWarp box'>
+      <text>城市</text>{{userInfo.city}}</view>
+  </view>
+</view>

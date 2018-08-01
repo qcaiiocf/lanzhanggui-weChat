@@ -1,6 +1,13 @@
 // pages/home/home.js
 // 获取应用实例
-var app=getApp()
+var app = getApp()
+
+var {
+  goodsClick,
+  getShopCar,
+  getOften,
+  getClassify
+} = require('../../utils/util.js')
 Page({
   data: {
     imgIP: app.globalData.imgIP,
@@ -11,7 +18,48 @@ Page({
       '/images/banner01.jpg',
       '/images/banner02.jpg'
     ],
-    infoArr:[]
+    infoArr: [],
+    goodsArr: [],
+    shopCar: []
+  },
+  onLoad: function(options) {
+    var that = this
+    // 获取购物车列表
+    getShopCar('')
+    // 获取分类
+    getClassify()
+    // 获取常购
+    getOften()
+    // 隐藏tabbar
+    wx.hideTabBar({})
+    // 待机页面倒计时
+    let timeInterval = setInterval(() => {
+      this.setData({
+        time: this.data.time - 1
+      })
+      if (this.data.time <= 0) {
+        // 显示tabbar
+        wx.showTabBar()
+        clearInterval(timeInterval)
+        that.setData({
+          show: false
+        })
+      }
+    }, 1000)
+    // 获取资讯
+    this.getInfo()
+    this.getGoods()
+  },
+  // 获取商品列表
+  getGoods: function() {
+    wx.request({
+      url: app.globalData.dataIP + '/goods/find',
+      success: (res) => {
+        this.setData({
+          goodsArr: res.data
+        })
+      }
+    })
   },
   //清除广告
   clearAd: function() {
@@ -26,76 +74,80 @@ Page({
     })
   },
   // 至信息内容页
-  toInfoContent: function(e) {   
+  toInfoContent: function(e) {
     wx.navigateTo({
       url: '../infoContent/infoContent?item=' + JSON.stringify(e.currentTarget.dataset.item)
     })
   },
   // 至信息页
-  toInfo: function () {
+  toInfo: function() {
     wx.navigateTo({
       url: '../info/info',
     })
   },
+  // 至详情页
+  toClassify: function() {
+    wx.switchTab({
+      url: '../classify/classify',
+    })
+  },
+  // 至常购
+  toOften:function(){
+    wx.navigateTo({
+      url: '../often/often',
+    })
+  },
+  // 至我的
+  toMy:function(){
+    wx.switchTab({
+      url: '../my/my',
+    })
+  },
   // 跳过待机页面
-  goHome: function () {
+  goHome: function() {
     // 显示tabbar
-    wx.showTabBar()          
+    wx.showTabBar()
     this.setData({
       show: false
     })
   },
   // 下拉刷新事件监听
-  onPullDownRefresh:function(){
-    console.log(1)
-    wx.showNavigationBarLoading()
-     this.getInfo()
-     wx.stopPullDownRefresh()
+  // onPullDownRefresh: function() {
+  //   console.log(1)
+  //   wx.showNavigationBarLoading()
+  //    this.getInfo()
+  //    wx.stopPullDownRefresh()
 
+  // },
+  // onReachBottom: function() {
+  //   console.log(2)
+  // },
+  // 点击商品
+  goodsClick: function(e) {
+    goodsClick(e, this)
   },
-      // 获取info
-  getInfo:function(){
-    var that=this
-    wx.request({
-      url: app.globalData.dataIP + '/info/find',
-      data: {
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        that.setData({
-          infoArr: res.data
-        })
-      }
-    })
-  }
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  ,
-  onLoad: function(options) {
-    
-    var that=this
-    // 隐藏tabbar
-    wx.hideTabBar({})
-    // 待机页面倒计时
-    let timeInterval = setInterval(() => {
-      this.setData({
-        time: this.data.time - 1
+
+  // 获取info
+  getInfo: function() {
+      var that = this
+      wx.request({
+        url: app.globalData.dataIP + '/info/find',
+        data: {},
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success: function(res) {
+          that.setData({
+            infoArr: res.data
+          })
+        }
       })
-      if (this.data.time <= 0) {
-        // 显示tabbar
-        wx.showTabBar()                  
-        clearInterval(timeInterval)
-        that.setData({
-          show:false
-        })  
-      }
-    
-    }, 1000)
-    this.getInfo()
-  },
+    }
+    /**
+     * 生命周期函数--监听页面加载
+     */
+    ,
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

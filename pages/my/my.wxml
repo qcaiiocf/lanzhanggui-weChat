@@ -1,0 +1,36 @@
+<!--pages/my/my.wxml-->
+<view class='flexWarp topBox'>
+  <view class='imgBox'>
+    <image src='{{userInfo?userInfo.avatarUrl:"../../images/name.png"}}' style='width:100%;height:100%;'></image>
+  </view>
+  <view class='flexGrow' bindtap='toLogin'>
+    <view style='padding:10rpx 0 30rpx'>{{userInfo?userInfo.nickName:"请登录"}}</view>
+    <view style='font-size:22rpx;color:#4b4;' wx:if='{{!userInfo}}'>点击登录</view>
+  </view>
+  <view>
+    >
+  </view>
+</view>
+
+<view class='bottomBox'>
+  <view class='orderBox'>
+    <view class='flexWarp' style='justify-content:space-between'>
+      <view>我的订单</view>
+      <view>查看全部></view>
+    </view>
+    <view class='flexWarp orderContent'>
+      <view>
+        <image src='../../images/dfk.png' style='width:28rpx;height:42rpx'></image>
+        <view>待付款</view>
+      </view>
+      <view>
+        <image src='../../images/psz.png' style='width:57rpx;height:42rpx'></image>
+        <view>待收货</view>
+      </view>
+      <view>
+        <image src='../../images/yqx.png' style='width:40rpx;height:40rpx'></image>
+        <view>已取消</view>
+      </view>
+    </view>
+  </view>
+</view>

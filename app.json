@@ -5,12 +5,21 @@
     "pages/index/index",
     "pages/ad/ad",
     "pages/info/info",
-    "pages/infoContent/infoContent"
+    "pages/infoContent/infoContent",
+    "templates/goods/goods",
+    "pages/shopCar/shopCar",
+    "pages/goods_details/goods_details",
+    "pages/classify/classify",
+    "pages/often/often",
+    "pages/search/search",
+    "pages/my/my",
+    "pages/login/login",
+    "pages/myInfo/myInfo"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "#f7f7f7",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "懒掌柜",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -27,19 +36,19 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/classify/classify",
         "iconPath": "images/nav/classification-off.png",
         "selectedIconPath": "images/nav/classification-on.png",
         "text": "分类"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/shopCar/shopCar",
         "iconPath": "images/nav/cart-off.png",
         "selectedIconPath": "images/nav/cart-on.png",
         "text": "购物车"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/my/my",
         "iconPath": "images/nav/my-off.png",
         "selectedIconPath": "images/nav/my-on.png",
         "text": "我的"

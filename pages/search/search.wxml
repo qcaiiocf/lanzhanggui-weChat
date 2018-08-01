@@ -1,0 +1,17 @@
+<import src='../../templates/goods/goods.wxml' />
+
+<view style='padding:10rpx;border-bottom:1rpx solid #d5d5d5;position: relative'>
+  <input placeholder="请输入搜索内容" placeholder-style='color:#d5d5d5' auto-focus class='ipt' bindconfirm='search' />
+  <image src='../../images/search.png' class='searchimg'></image>
+</view>
+
+<view wx:if='{{isSearch}}'>
+  <view wx:if='{{searchData.length>0}}'>
+      <view wx:for='{{searchData}}' wx:key='{{index}}'  data-item='{{item}}'  bindtap='goodsClick'>
+          <template is='goods' data='{{...item,imgIP}}' />
+      </view> 
+  </view>
+  <view wx:else>
+    没有相关产品
+  </view>
+</view>

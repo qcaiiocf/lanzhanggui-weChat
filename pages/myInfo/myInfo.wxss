@@ -1,0 +1,9 @@
+/* pages/myInfo/myInfo.wxss */
+
+.box {
+  width: 100%;
+  justify-content: space-between;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-top: 1rpx solid #d5d5d5
+}

@@ -1,0 +1,72 @@
+/* pages/shopCar/shopCar.wxss */
+
+.shopCar_conBox {
+  padding:100rpx 20rpx;
+  
+}
+
+.shopCar_con {
+  background: white;
+  margin-bottom: 20rpx;
+}
+
+.shopCar_text {
+  font-size: 40rpx;
+  margin-left: 30rpx;
+}
+
+.shopCar_name {
+  padding: 20rpx 0;
+  font-size: 40rpx;
+}
+
+.goods_text {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.goods_money {
+  padding: 20rpx;
+  justify-content: space-between;
+}
+
+.selected {
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx 0 20rpx;
+}
+
+.delBtn {
+  background: red;
+  color: white;
+  border-radius: 10rpx;
+  padding: 10rpx 20rpx;
+}
+.opacity5 {
+  opacity: .5
+}
+.numBox {
+  padding: 5px 10px;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  position: fixed;
+  top:0;
+  box-sizing: border-box;
+  width: 100%
+}
+
+.payBox {
+  position: fixed;
+  bottom: 0;
+  align-items: center;
+  background: white;
+  width: 100%;
+}
+
+.pay {
+  padding: 30rpx;
+  background: #4b4;
+  color: white;
+  font-size: 32rpx;
+}

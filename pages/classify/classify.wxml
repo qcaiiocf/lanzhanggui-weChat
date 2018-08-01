@@ -1,0 +1,18 @@
+<!--pages/classify/classify.wxml-->
+<import src='../../templates/goods/goods.wxml' />
+
+
+<view style='padding:10rpx;border-bottom:1rpx solid #d5d5d5;position: relative'>
+  <input placeholder="请输入搜索内容" placeholder-style='color:#d5d5d5' class='ipt' bindfocus='toSearch'/>
+  <image src='../../images/search.png' class='searchimg'></image>
+</view>
+
+<wxc-tab bind:tabchange="onClick" default-index="{{0}}" component-id="c2" animate="{{true}}">
+  <wxc-tab-panel wx:for="{{tabs}}" wx:for-item="tab" wx:key="{{tab.content}}" tab-index="{{index}}" component-id="c2" label="{{tab.title}}">
+  </wxc-tab-panel>
+
+  <view wx:for='{{tabs[i].goods}}' wx:key='{{index}}' data-item='{{item}}' bindtap='goodsClick'>
+    <template is='goods' data='{{...item,imgIP}}' />
+  </view>
+
+</wxc-tab>

@@ -1,0 +1,17 @@
+<import src='../../templates/goods/goods.wxml' />
+
+<view wx:if='{{userInfo}}' style='background:#f7f7f7;height:100vh;padding:10rpx'>
+  <view wx:if='{{data.goods.length>0}}'>
+    <view wx:for='{{data.goods}}' wx:key='{{index}}' data-item='{{item}}' style='background:white' bindtap='goodsClick'>
+      <template is='goods' data='{{...item,imgIP}}' />
+    </view>
+  </view>
+  <view wx:else style='text-align:center;margin:50rpx'>
+    <image src='../../images/empty.png' style='width:400rpx;height:400rpx;'></image>
+    <view> 空空如也</view>
+  </view>
+</view>
+<view wx:else class='flexWarp' style='align-items:center;margin:50rpx 0'>
+  <text style='color:red'>您尚未登录，请：</text>
+  <button style='width:30%;margin:0' type='primary' bindtap='toLogin'>前往登录</button>
+</view>

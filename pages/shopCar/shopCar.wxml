@@ -1,0 +1,62 @@
+<view wx:if='{{userInfo}}'>
+  <view wx:if='{{shopCar.length>0}}' style='background:#f7f7f7;height:100vh;'>
+    <view class="flexWarp numBox">
+      <view>已选中{{selectArr.length}}样商品</view>
+      <view wx:if='{{selectArr.length>0}}' class='delBtn' bindtap='delBtn'>删除</view>
+      <view wx:else class='delBtn opacity5'>删除</view>
+    </view>
+    <view class='shopCar_conBox'>
+      <view wx:for='{{shopCar}}' wx:key='{{index}}' class='shopCar_con'>
+        <view class='flexWarp goods_text'>
+          <!-- 选择器 -->
+          <view id='{{item._id}}' bindtap='selectClick' class='selected'>
+            <image src='../../images/{{selectObj[item._id]?"selected.png":"unselected.png"}}' style='width:50rpx;height:50rpx;'></image>
+          </view>
+
+          <!-- 商品图片 -->
+          <image src='{{imgIP+item.goods[0].src}}' style='width:200rpx;height:200rpx' bindtap='toDetails' data-item='{{item.goods[0]}}'></image>
+
+          <!-- 商品信息 -->
+          <view class='shopCar_text' bindtap='toDetails' data-item='{{item.goods[0]}}'>
+            <view class='shopCar_name'> {{item.goods[0].name}}</view>
+            <view>
+              <text>单价：</text>
+              <text>{{item.goods[0].price+"元/"+item.goods[0].spce}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='flexWarp goods_money'>
+          <text style='color:red'>￥{{item.goods[0].price*item.num}}</text>
+          <view data-id='1'>
+            <wxc-counter number="{{item.num}}" max="{{10000}}" min="1" bind:changenumber="onChangeNumber" data-id='{{item._id}}'></wxc-counter>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class='flexWarp payBox'>
+      <!-- 选择器 -->
+      <view bindtap='selectAll' class='selected'>
+        <image src='../../images/{{selectAll?"selected.png":"unselected.png"}}' style='width:50rpx;height:50rpx;padding:0 10rpx 0 20rpx'></image>
+        <text>全选</text>
+      </view>
+      <view class='flexGrow'>合计:
+        <text style='color:red'>￥{{total}}</text>
+      </view>
+      <view class='pay' bindtap='delBtn'>
+        去结算
+      </view>
+    </view>
+  </view>
+
+  <view wx:else style='text-align:center;margin:50rpx'>
+    <image src='../../images/empty.png' style='width:400rpx;height:400rpx;'></image>
+    <view> 空空如也</view>
+  </view>
+
+</view>
+
+<view wx:else class='flexWarp' style='align-items:center;margin:50rpx 0'>
+  <text style='color:red'>您尚未登录，请：</text>
+  <button style='width:30%;margin:0' type='primary' bindtap='toLogin'>前往登录</button>
+</view>

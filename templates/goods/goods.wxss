@@ -1,0 +1,17 @@
+/* templates/goods/goods.wxss */
+
+.box{
+  padding:20rpx 10rpx;
+  border-bottom:1rpx solid #c4c4c4;
+  margin:10rpx 0;
+}
+.goodsName{
+  margin:10rpx 10rpx 20rpx;
+  font-size:36rpx
+}
+
+.goodsPrice{
+  font-size:30rpx;
+  margin:10rpx;
+  color:red
+}

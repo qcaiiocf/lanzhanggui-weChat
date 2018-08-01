@@ -1,0 +1,2 @@
+/* pages/often/often.wxss */
+@import '../../templates/goods/goods.wxss'

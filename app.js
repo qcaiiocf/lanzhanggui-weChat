@@ -21,7 +21,6 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -35,7 +34,12 @@ App({
   },
   globalData: {
     userInfo: null,
+    signature:null,
     imgIP:'http://192.168.101.47:3000',
-    dataIP: 'http://192.168.101.47:3333'
+    dataIP: 'http://192.168.101.47:3333',
+    shopCar:[],
+    goods:{},
+    often:{},
+    classify:[]
   }
 })

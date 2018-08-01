@@ -1,0 +1,46 @@
+/* pages/goods_details/goods_details.wxss */
+
+.goodsName {
+  font-size: 36rpx;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #d5d5d5;
+  border-top: 1rpx solid #d5d5d5;
+}
+
+.goodsSummary {
+  padding: 20rpx;
+}
+
+.money {
+width:100%;
+color:red;
+padding:20rpx;
+border-bottom:20rpx solid #f7f7f7;
+border-top:20rpx solid #f7f7f7;
+justify-content:space-between;
+align-items:center;
+box-sizing:border-box;
+}
+
+.push {
+  padding: 30rpx;
+  background: #4b4;
+  text-align: center;
+  color: white;
+  font-size: 40rpx;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.often {
+width:200rpx;
+background:#4b4;
+color:white;
+height:100rpx;
+margin:10rpx 0;
+border-radius:10rpx;
+justify-content:center;
+align-items:center;
+
+}

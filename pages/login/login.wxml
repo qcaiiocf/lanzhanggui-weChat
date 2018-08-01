@@ -1,0 +1,9 @@
+<!--pages/login/login.wxml-->
+<view class='flexWarp logoBox'>
+  <image src='../../images/logo.png' style='width:120rpx;height:120rpx'></image>
+  <view>懒掌柜</view>
+  <view>食材一站式采购平台</view>
+</view>
+
+
+<button open-type="getUserInfo" class='wxBtn' lang="zh_CN" type='primary' bindgetuserinfo="onGotUserInfo">微信登录</button>

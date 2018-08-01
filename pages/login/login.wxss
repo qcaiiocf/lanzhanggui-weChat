@@ -1,0 +1,15 @@
+/* pages/login/login.wxss */
+
+.logoBox {
+  flex-flow: column;
+  justify-content: space-around;
+  height: 300rpx;
+  padding: 50rpx;
+  align-items: center;
+  margin: 60rpx;
+}
+
+.wxBtn {
+  width: 80%;
+  color: white;
+}
